@@ -7,11 +7,8 @@ window.onscroll = () => {
   section.forEach(sec => {
 
     let top = window.scrollY; //returns the number of pixels that the document is currently scrolled vertically.
-    console.log(`scrollY: ${top}`);
     let offset = sec.offsetTop - 150; //returns the distance of the outer border of the current element relative to the inner border of the top of the offsetParent, the closest positioned ancestor element
-    console.log(`Offset top: ${offset}`);
-    let height = sec.offsetHeight;
-    console.log(`Offset height: ${height}`); //returns the height of an element, including vertical padding and borders, as an integer
+    let height = sec.offsetHeight; //returns the height of an element, including vertical padding and borders, as an integer
     let id = sec.getAttribute('id'); //gets the value of an attribute of an element
 
     if (top >= offset && top < offset + height) {
@@ -23,3 +20,12 @@ window.onscroll = () => {
     }
   });
 }
+
+//Hide the id in the url after a link click
+const hashHandler = () => {
+  const loc = window.location.hash.split('#')[1];
+  window.history.pushState({}, 'Page Title', '/' + loc);
+}
+
+//listen to changes in the window's hash
+window.addEventListener("hashchange", hashHandler, false);
