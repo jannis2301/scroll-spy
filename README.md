@@ -10,8 +10,10 @@ A page with simple scrollspy effects.
 ## Technologies
 
 - HTML
-- CSS
-- Javascript
+- Sass
+- Typescript
+- Vite
+- Vitest
 
 ## Sources
 
