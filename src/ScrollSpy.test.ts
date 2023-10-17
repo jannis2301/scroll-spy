@@ -15,9 +15,9 @@ describe('ScrollSpy', () => {
       </nav>
     </header>
 
-    <section id="section-1">Section 1</section>
-    <section id="section-2">Section 2</section>
-    <section id="section-3">Section 3</section>
+    <section id="section-1" class="section">Section 1</section>
+    <section id="section-2" class="section">Section 2</section>
+    <section id="section-3" class="section">Section 3</section>
     `
 
     document.body.appendChild(mockElement)
