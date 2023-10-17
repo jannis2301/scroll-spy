@@ -1,42 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/style.scss" />
+    <title>Scroll Spy</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./resources/style/style.css">
-  <title>Scroll Spy</title>
-</head>
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <a class="active nav-link" href="#home">Home</a>
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#services">Services</a>
+        <a class="nav-link" href="#blogs">Blogs</a>
+        <a class="nav-link" href="#contact">Contact</a>
+      </nav>
+    </header>
 
-<body>
-  <header>
-    <nav>
-      <a class="active" href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#blogs">Blogs</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+    <section id="home" class="section">Home</section>
+    <section id="about" class="section">About</section>
+    <section id="services" class="section">Services</section>
+    <section id="blogs" class="section">Blogs</section>
+    <section id="contact" class="section">Contact</section>
 
-  <section id="home">
-    Home
-  </section>
-  <section id="about">
-    About
-  </section>
-  <section id="services">
-    Services
-  </section>
-  <section id="blogs">
-    Blogs
-  </section>
-  <section id="contact">
-    Contact
-  </section>
-
-  <script src="./resources/js/main.js"></script>
-</body>
-
+    <script type="module" src="/src/index.ts"></script>
+  </body>
 </html>
