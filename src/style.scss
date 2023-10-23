@@ -2,9 +2,9 @@
   --black: #000;
   --white: #fff;
   --orange: #ff4500;
-  --main-bg: #181818;
-  --header-bg: #ffbc00;
-  --active-link: #624478;
+  --main-bg: #040a2c;
+  --header-bg: #ffc107;
+  --active-link: #881b9b;
 }
 
 html {
@@ -59,6 +59,6 @@ body {
   align-items: center;
   font-size: 80px;
   font-weight: 700;
-  color: var(--white);
-  border-bottom: 3px solid var(--orange);
+  color: var(--header-bg);
+  border-bottom: 3px solid var(--header-bg);
 }
