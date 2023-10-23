@@ -34,23 +34,28 @@ export class ScrollSpy {
   }
 
   private handleScroll(): void {
-    const top = window.scrollY
-
-    for (const section of this.sections) {
-      const offset = section.offsetTop - 150
-      const height = section.offsetHeight
-      const id = section.getAttribute('id')
-
-      if (top >= offset && top < offset + height) {
-        for (const link of this.navLinks) {
-          link.classList.remove('active')
-          const navLinkId = link.getAttribute('href')?.substring(1)
-          if (navLinkId === id) {
-            link.classList.add('active')
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const targetId = entry.target.getAttribute('id')
+            this.navLinks.forEach((link) => {
+              const navLinkId = link.getAttribute('href')?.substring(1)
+              if (navLinkId === targetId) {
+                link.classList.add('active')
+              } else {
+                link.classList.remove('active')
+              }
+            })
           }
-        }
-      }
-    }
+        })
+      },
+      { threshold: 0.5 }
+    )
+
+    this.sections.forEach((section) => {
+      observer.observe(section)
+    })
   }
 
   private hashHandler(): void {
@@ -60,7 +65,7 @@ export class ScrollSpy {
   }
 
   private init(): void {
-    window.addEventListener('scroll', this.handleScroll)
     window.addEventListener('hashchange', this.hashHandler, false)
+    this.handleScroll()
   }
 }
